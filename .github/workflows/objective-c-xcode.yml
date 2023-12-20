@@ -20,7 +20,7 @@ jobs:
           python-version: '3.7.17'
       - name: Build vlckit
         run: |
-          #sh compileAndBuildVLCKit.sh -v
           python --version
           which python
           echo /Library/Frameworks/Python.framework/Versions/3.*/bin | awk '{print $1;}'
+          sh compileAndBuildVLCKit.sh -v -a aarch64

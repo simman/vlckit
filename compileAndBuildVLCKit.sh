@@ -471,7 +471,8 @@ if [ "$VLCROOT" = "" ]; then
 fi
 
 fetch_python3_path() {
-    PYTHON3_PATH=$(echo /Library/Frameworks/Python.framework/Versions/3.*/bin | awk '{print $1;}')
+    # PYTHON3_PATH=$(echo /Library/Frameworks/Python.framework/Versions/3.*/bin | awk '{print $1;}')
+    PYTHON3_PATH="/Users/runner/hostedtoolcache/Python/3.7.17/x64/bin"
     if [ ! -d "${PYTHON3_PATH}" ]; then
         PYTHON3_PATH=""
     fi
