@@ -22,4 +22,5 @@ jobs:
         run: |
           #sh compileAndBuildVLCKit.sh -v
           python --version
+          which python
           echo /Library/Frameworks/Python.framework/Versions/3.*/bin | awk '{print $1;}'
