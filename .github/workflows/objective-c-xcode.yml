@@ -23,4 +23,16 @@ jobs:
           python --version
           which python
           echo /Library/Frameworks/Python.framework/Versions/3.*/bin | awk '{print $1;}'
+          brew install cmake
+          brew install pkg-config
+          brew install libxml2
+          brew install libxslt
+          brew install libjpeg
+          brew install libpng
+          brew install libtiff
+          brew install libvorbis
+          brew install libogg
+          brew install libtheora
+          brew install libvpx
+          brew install ffmpeg
           sh compileAndBuildVLCKit.sh -f -a aarch64
