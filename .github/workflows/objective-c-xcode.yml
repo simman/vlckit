@@ -14,12 +14,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Build vlckit
+      - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.7.17'
+      - name: Build vlckit
         run: |
-          #xcodebuild clean build analyze -scheme "$scheme" -"$filetype_parameter" "$file_to_build" | xcpretty && exit ${PIPESTATUS[0]}
           #sh compileAndBuildVLCKit.sh -v
-          echo /Library/Frameworks/Python.framework/Versions/3.*/bin | awk '{print $1;}'
           python --version
+          echo /Library/Frameworks/Python.framework/Versions/3.*/bin | awk '{print $1;}'
