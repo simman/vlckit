@@ -20,6 +20,11 @@ jobs:
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
           echo Using default scheme: $default
+      - uses: actions/checkout@v2                                                                                                                                                                          
+      - name: Set up Python                                                                                                                                                                                
+        uses: actions/setup-python@v2                                                                                                                                                                      
+        with:                                                                                                                                                                                              
+          python-version: 3.7.17
       - name: Build
         env:
           scheme: ${{ 'default' }}
@@ -30,3 +35,4 @@ jobs:
           #xcodebuild clean build analyze -scheme "$scheme" -"$filetype_parameter" "$file_to_build" | xcpretty && exit ${PIPESTATUS[0]}
           #sh compileAndBuildVLCKit.sh -v
           echo /Library/Frameworks/Python.framework/Versions/3.*/bin | awk '{print $1;}'
+          python --version
